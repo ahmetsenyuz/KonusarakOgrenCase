@@ -1,5 +1,8 @@
+using System;
+using KonusarakOgrenCase.Models.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -14,6 +17,21 @@ namespace KonusarakOgrenCase
         {
             services.AddMvc();
             services.AddEntityFrameworkSqlite().AddDbContext<MyContext>();
+            services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
+            {
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 5;
+
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5); //atma süresi
+                options.Lockout.MaxFailedAccessAttempts = 3; 
+                options.Lockout.AllowedForNewUsers = false;
+
+                options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
+                options.User.RequireUniqueEmail = true;
+            }).AddEntityFrameworkStores<MyContext>().AddDefaultTokenProviders();
+
             services.AddControllersWithViews();
         }
 
@@ -32,11 +50,14 @@ namespace KonusarakOgrenCase
             }
             app.UseRouting();
 
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=exams}/{action=Index}/{id?}");
+                    pattern: "{controller=account}/{action=login}/{id?}");
             });
         }
     }

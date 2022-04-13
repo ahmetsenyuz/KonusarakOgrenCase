@@ -1,0 +1,69 @@
+﻿@model RegisterViewModel
+
+<form asp-controller="Account" asp-action="Register" method="post" style="margin-top: 5%">
+    <div class="container-fluid ">
+        <div class="row text-center">
+            <div class="col-md-3">
+            </div>
+
+            <div class="col-md-6" style="border: solid">
+                <h1 style="margin-top: 30px;margin-bottom: 30px">KAYIT OL</h1>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input asp-for="Name" type="text" class="form-control" placeholder="Ad" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input asp-for="Surname" type="text" class="form-control" placeholder="Soyad" />
+                            <span asp-validation-for="Surname" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input asp-for="UserName" type="text" class="form-control" placeholder="Kullanıcı Adı" />
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input asp-for="Email" type="email" class="form-control" placeholder="E-mail" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input asp-for="Password" type="password" class="form-control" placeholder="Şifre" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Şifre Tekrar" />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-right">
+                    <div class="col-md-12">
+                        <input type="submit" value="Kayıt Ol" class="btn" style="margin-top: 10px;margin-bottom: 30px" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+    </div>
+</form>

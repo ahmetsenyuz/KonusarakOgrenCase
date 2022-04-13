@@ -1,0 +1,43 @@
+﻿@model LoginViewModel
+
+<form asp-controller="Account" asp-action="Login" method="post" style="margin-top: 15%">
+    <div class="container-fluid ">
+        <div class="row text-center">
+            <div class="col-md-3">
+            </div>
+
+            <div class="col-md-6" style="border: solid">
+                <h1 style="margin-top: 30px;margin-bottom: 30px">KULLANICI GİRİŞ</h1>
+                <p class="text-danger">@TempData["Message"]</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input asp-for="Username" type="text" class="form-control" placeholder="Kullanıcı Adı" />
+                            <span asp-validation-for="Username" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input asp-for="Password" type="password" class="form-control" placeholder="Şifre" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-right">
+                    <div class="col-md-12">
+                        <input type="submit" value="GİRİŞ YAP" class="btn" style="margin-top: 10px;" />
+                    </div>
+                </div>
+                <div class="row text-right">
+                    <div class="col-md-12">
+                        <a class="btn" asp-controller="Account" asp-action="Register" style="margin-bottom: 10px; margin-top: 0px">Kayıt Ol</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+    </div>
+</form>

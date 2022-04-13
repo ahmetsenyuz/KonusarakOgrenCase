@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using KonusarakOgrenCase.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace KonusarakOgrenCase.Controllers
 {
+    [Authorize]
     public class AssignmentController : Controller
     {
         private readonly MyContext _context;

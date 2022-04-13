@@ -1,16 +1,16 @@
-﻿using System;
+﻿using HtmlAgilityPack;
+using KonusarakOgrenCase.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using HtmlAgilityPack;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using KonusarakOgrenCase;
-using KonusarakOgrenCase.Models;
 
 namespace KonusarakOgrenCase.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ExamsController : Controller
     {
         private readonly MyContext _context;

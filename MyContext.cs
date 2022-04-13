@@ -1,10 +1,12 @@
 ﻿using KonusarakOgrenCase.Models;
+using KonusarakOgrenCase.Models.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 
 namespace KonusarakOgrenCase
 {
-    public class MyContext : DbContext
+    public class MyContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
