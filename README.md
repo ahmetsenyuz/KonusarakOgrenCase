@@ -13,3 +13,10 @@ bilgileri ile giriş yapılabilir.
 Sadece admin rolünde olan kullanıcıların sınav hazırlama yetkisi olduğu için sınav listesi, sınav silme ve sınav oluşturma ekranları için admin hesabı ile giriş yapınız.
 
 Oluşturulan sınavlardan rastgele birini çözmek için user1 hesabına giriş yapınız ya da yeni kullanıcı oluşturunuz.
+
+Admin kullanıcısının girdiği sayfalar:
+../Exams/Create
+../Exams/index
+
+User'ların girdiği sayfa:
+../Assignment/Exam
