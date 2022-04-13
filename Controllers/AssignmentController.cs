@@ -23,18 +23,18 @@ namespace KonusarakOgrenCase.Controllers
             var exams = await _context.Exams.ToListAsync();
             Random rnd = new Random();
             var a = rnd.Next(0, exams.Count);
-            var aas = exams[a];
+            var exam = exams[a];
             List<string> alist = new List<string>();
-            string q1 = aas.CorrectAnswer1;
+            string q1 = exam.CorrectAnswer1;
             alist.Add(q1);
-            string q2 = aas.CorrectAnswer2;
+            string q2 = exam.CorrectAnswer2;
             alist.Add(q2);
-            string q3 = aas.CorrectAnswer3;
+            string q3 = exam.CorrectAnswer3;
             alist.Add(q3);
-            string q4 = aas.CorrectAnswer4;
+            string q4 = exam.CorrectAnswer4;
             alist.Add(q4);
             ViewBag.Answers = alist;
-            return View(exams[a]);
+            return View(exam);
         }
     }
 }
