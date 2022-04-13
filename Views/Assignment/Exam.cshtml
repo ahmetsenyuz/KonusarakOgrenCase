@@ -1,0 +1,177 @@
+﻿@model KonusarakOgrenCase.Models.Exams
+@{
+    List<string> answers = ViewBag.Answers;
+}
+<div class="container-fluid" id="body">
+    <br />
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>@Model.Header</h1>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12 text-center">
+            @Model.Essay
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            1) @Model.Title1 <br /><br />
+            <div class="row" style="border: solid; border-width: 1px; margin-bottom: 3px; margin-right: 4px">
+                <div class="col-md-12">
+                    <input type="radio" id="1a" name="1" value="Option1A">
+                    <label for="1a">@Model.Option1A</label><br>
+                </div>
+            </div>
+            <div class="row" style="border: solid; border-width: 1px; margin-bottom: 3px; margin-right: 4px">
+                <div class="col-md-12">
+                    <input type="radio" id="1b" name="1" value="Option1B">
+                    <label for="1b">@Model.Option1B</label><br>
+                </div>
+            </div>
+            <div class="row" style="border: solid; border-width: 1px; margin-bottom: 3px; margin-right: 4px">
+                <div class="col-md-12">
+                    <input type="radio" id="1c" name="1" value="Option1C">
+                    <label for="1c">@Model.Option1C</label><br />
+                </div>
+            </div>
+            <div class="row" style="border: solid; border-width: 1px; margin-bottom: 3px; margin-right: 4px">
+                <div class="col-md-12">
+                    <input type="radio" id="1d" name="1" value="Option1D">
+                    <label for="1d">@Model.Option1D</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            2) @Model.Title2 <br /><br />
+            <div class="row" style="border: solid; border-width: 1px; margin-bottom: 3px; margin-left: 2px">
+                <div class="col-md-12">
+                    <input type="radio" id="2a" name="2" value="Option2A">
+                    <label for="2a">@Model.Option2A</label><br>
+                </div>
+            </div>
+            <div class="row" style="border: solid; border-width: 1px; margin-bottom: 3px; margin-left: 2px">
+                <div class="col-md-12">
+                    <input type="radio" id="2b" name="2" value="Option2B">
+                    <label for="2b">@Model.Option2B</label><br>
+                </div>
+            </div>
+            <div class="row" style="border: solid; border-width: 1px; margin-bottom: 3px; margin-left: 2px">
+                <div class="col-md-12">
+                    <input type="radio" id="2c" name="2" value="Option2C">
+                    <label for="2c">@Model.Option2C</label><br />
+                </div>
+            </div>
+            <div class="row" style="border: solid; border-width: 1px; margin-bottom: 3px; margin-left: 2px">
+                <div class="col-md-12">
+                    <input type="radio" id="2d" name="2" value="Option2D">
+                    <label for="2d">@Model.Option2D</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            3) @Model.Title3 <br /><br />
+            <div class="row" style="border: solid; border-width: 1px; margin-bottom: 3px; margin-right: 4px">
+                <div class="col-md-12">
+                    <input type="radio" id="3a" name="3" value="Option3A">
+                    <label for="3a">@Model.Option3A</label><br>
+                </div>
+            </div>
+            <div class="row" style="border: solid; border-width: 1px; margin-bottom: 3px; margin-right: 4px">
+                <div class="col-md-12">
+                    <input type="radio" id="3b" name="3" value="Option3B">
+                    <label for="3b">@Model.Option3B</label><br>
+                </div>
+            </div>
+            <div class="row" style="border: solid; border-width: 1px; margin-bottom: 3px; margin-right: 4px">
+                <div class="col-md-12">
+                    <input type="radio" id="3c" name="3" value="Option3C">
+                    <label for="3c">@Model.Option3C</label><br />
+                </div>
+            </div>
+            <div class="row" style="border: solid; border-width: 1px; margin-bottom: 3px; margin-right: 4px">
+                <div class="col-md-12">
+                    <input type="radio" id="3d" name="3" value="Option3D">
+                    <label for="3d">@Model.Option3D</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            4) @Model.Title4 <br /><br />
+            <div class="row" style="border: solid; border-width: 1px; margin-bottom: 3px; margin-left: 2px">
+                <div class="col-md-12">
+                    <input type="radio" id="4a" name="4" value="Option4A">
+                    <label for="4a">@Model.Option4A</label><br>
+                </div>
+            </div>
+            <div class="row" style="border: solid; border-width: 1px; margin-bottom: 3px; margin-left: 2px">
+                <div class="col-md-12">
+                    <input type="radio" id="4b" name="4" value="Option4B">
+                    <label for="4b">@Model.Option4B</label><br>
+                </div>
+            </div>
+            <div class="row" style="border: solid; border-width: 1px; margin-bottom: 3px; margin-left: 2px">
+                <div class="col-md-12">
+                    <input type="radio" id="4c" name="4" value="Option4C">
+                    <label for="4c">@Model.Option4C</label><br />
+                </div>
+            </div>
+            <div class="row" style="border: solid; border-width: 1px; margin-bottom: 3px; margin-left: 2px">
+                <div class="col-md-12">
+                    <input type="radio" id="4d" name="4" value="Option4D">
+                    <label for="4d">@Model.Option4D</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-8 text-center">
+            <button id="bitir" onclick="MyFunction()" class="btn btn-primary btn-large" style="font-size: 25px">SINAVI TAMAMLA</button>
+        </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+    <br /><br />
+</div>
+@section Scripts
+{
+<script>
+    var MyFunction = () => {
+        var answers = @Html.Raw(Json.Serialize(answers));
+
+        var q1 = document.querySelector('input[name = "1"]:checked').value;
+        var q2 = document.querySelector('input[name = "2"]:checked').value;
+        var q3 = document.querySelector('input[name = "3"]:checked').value;
+        var q4 = document.querySelector('input[name = "4"]:checked').value;
+
+        if (q1 == answers[0] ) {
+            document.querySelector('input[name = "1"]:checked').parentNode.style.backgroundColor = "aquamarine";
+        } else {
+            document.querySelector('input[name = "1"]:checked').parentNode.style.backgroundColor = "red";
+        }
+        if (q2 == answers[1] ) {
+            document.querySelector('input[name = "2"]:checked').parentNode.style.backgroundColor = "aquamarine";
+        } else {
+            document.querySelector('input[name = "2"]:checked').parentNode.style.backgroundColor = "red";
+        }
+        if (q3 == answers[2] ) {
+            document.querySelector('input[name = "3"]:checked').parentNode.style.backgroundColor = "aquamarine";
+        } else {
+            document.querySelector('input[name = "3"]:checked').parentNode.style.backgroundColor = "red";
+        }
+        if (q4 == answers[3] ) {
+            document.querySelector('input[name = "4"]:checked').parentNode.style.backgroundColor = "aquamarine";
+        } else {
+            document.querySelector('input[name = "4"]:checked').parentNode.style.backgroundColor = "red";
+        }
+        document.getElementById("bitir").setAttribute("disabled",true);
+    }
+</script>
+}

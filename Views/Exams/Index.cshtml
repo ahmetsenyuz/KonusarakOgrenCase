@@ -1,0 +1,47 @@
+﻿@model IEnumerable<KonusarakOgrenCase.Models.Exams>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                #
+            </th>
+            <th>
+                Başlık
+            </th>
+            <th>
+                Tarih
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            int i = 1;
+            <tr>
+                <td>
+                    @i
+                </td>
+                <td>
+                    @item.Header
+                </td>
+                <td>
+                    @item.CreatedDate
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+                </td>
+            </tr>
+            i++;
+        }
+    </tbody>
+</table>

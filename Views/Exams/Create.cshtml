@@ -1,0 +1,288 @@
+﻿@model KonusarakOgrenCase.Models.Exams
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Essays> essays = ViewBag.Essays;
+}
+@foreach (var item in essays)
+{
+    <script>
+
+    </script>
+}
+
+
+<div class="container-fluid">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <p style="margin-top: 10px; margin-bottom: 2px; font-size: 22px">Yazı</p>
+                    <select onchange="MyFunction()" class="form-control" id="optionMenu" asp-for="Header"
+                            asp-items="@(new SelectList(essays, "Header", "Header"))">
+                    </select>
+                    <input class="form-group" type="hidden" asp-for="Header" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <p id="EssayView">@essays.FirstOrDefault().Paragraph</p>
+                    <input id="Essay" asp-for="Essay" type="hidden" value="@essays.FirstOrDefault().Paragraph" />
+                    <span asp-validation-for="Essay" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <input asp-for="Title1" class="form-control" placeholder="Soru 1" />
+                    <span asp-validation-for="Title1" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input asp-for="Option1A" class="form-control" placeholder="A)" />
+                    <span asp-validation-for="Option1A" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input asp-for="Option1B" class="form-control" placeholder="B)" />
+                    <span asp-validation-for="Option1B" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input asp-for="Option1C" class="form-control" placeholder="C)" />
+                    <span asp-validation-for="Option1C" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input asp-for="Option1D" class="form-control" placeholder="D)" />
+                    <span asp-validation-for="Option1D" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <select class="form-control" asp-for="CorrectAnswer1">
+                        <option value="" disabled selected>Doğru Cevap Seç</option>
+                        <option value="Option1A">A</option>
+                        <option value="Option1B">B</option>
+                        <option value="Option1C">C</option>
+                        <option value="Option1D">D</option>
+                    </select>
+                    <input class="form-group" type="hidden" asp-for="CorrectAnswer1" />
+                </div>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <input asp-for="Title2" class="form-control" placeholder="Soru 2" />
+                    <span asp-validation-for="Title2" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input asp-for="Option2A" class="form-control" placeholder="A)" />
+                    <span asp-validation-for="Option2A" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input asp-for="Option2B" class="form-control" placeholder="B)" />
+                    <span asp-validation-for="Option2B" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input asp-for="Option2C" class="form-control" placeholder="C)" />
+                    <span asp-validation-for="Option2C" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input asp-for="Option2D" class="form-control" placeholder="D)" />
+                    <span asp-validation-for="Option2D" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <select class="form-control" asp-for="CorrectAnswer2">
+                        <option value="" disabled selected>Doğru Cevap Seç</option>
+                        <option value="Option2A">A</option>
+                        <option value="Option2B">B</option>
+                        <option value="Option2C">C</option>
+                        <option value="Option2D">D</option>
+                    </select>
+                    <input class="form-group" type="hidden" asp-for="CorrectAnswer2" />
+                </div>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <input asp-for="Title3" class="form-control" placeholder="Soru 3" />
+                    <span asp-validation-for="Title3" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input asp-for="Option3A" class="form-control" placeholder="A)" />
+                    <span asp-validation-for="Option3A" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input asp-for="Option3B" class="form-control" placeholder="B)" />
+                    <span asp-validation-for="Option3B" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input asp-for="Option3C" class="form-control" placeholder="C)" />
+                    <span asp-validation-for="Option3C" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input asp-for="Option3D" class="form-control" placeholder="D)" />
+                    <span asp-validation-for="Option3D" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <select class="form-control" asp-for="CorrectAnswer3">
+                        <option value="" disabled selected>Doğru Cevap Seç</option>
+                        <option value="Option3A">A</option>
+                        <option value="Option3B">B</option>
+                        <option value="Option3C">C</option>
+                        <option value="Option3D">D</option>
+                    </select>
+                    <input class="form-group" type="hidden" asp-for="CorrectAnswer3" />
+                </div>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <input asp-for="Title4" class="form-control" placeholder="Soru 4" />
+                    <span asp-validation-for="Title4" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input asp-for="Option4A" class="form-control" placeholder="A)" />
+                    <span asp-validation-for="Option4A" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input asp-for="Option4B" class="form-control" placeholder="B)" />
+                    <span asp-validation-for="Option4B" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input asp-for="Option4C" class="form-control" placeholder="C)" />
+                    <span asp-validation-for="Option4C" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input asp-for="Option4D" class="form-control" placeholder="D)" />
+                    <span asp-validation-for="Option4D" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <select class="form-control" asp-for="CorrectAnswer4">
+                        <option value="" disabled selected>Doğru Cevap Seç</option>
+                        <option value="Option4A">A</option>
+                        <option value="Option4B">B</option>
+                        <option value="Option4C">C</option>
+                        <option value="Option4D">D</option>
+                    </select>
+                    <input class="form-group" type="hidden" asp-for="CorrectAnswer4" />
+                </div>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row text-center">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-8 container-fluid">
+                    <input type="submit" value="SINAV OLUŞTUR" class="btn btn-primary btn-large" style="font-size: 30px" />
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+    await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        function MyFunction() {
+            var roller = @Html.Raw(Json.Serialize(essays));
+            var a = document.getElementById("optionMenu").selectedIndex;
+            var par = roller[a].paragraph;
+            document.getElementById("EssayView").innerText = par;
+            document.getElementById("Essay").value = par;
+        }
+    </script>
+}
